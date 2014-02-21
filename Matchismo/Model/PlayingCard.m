@@ -55,17 +55,40 @@
 -(int)match:(NSArray *)otherCards
 {
     int score = 0;
-    
-    if([otherCards count] == 1){
-        PlayingCard *otherCard = [otherCards firstObject];
-        if(otherCard.rank == self.rank){
-            score = 4;
-        }else if([otherCard.suit isEqualToString:self.suit]){
-            score = 1;
+    if ([otherCards count]) {
+        for (Card *card in otherCards) {
+            if([card isKindOfClass:[PlayingCard class]]){
+                PlayingCard *otherCard = (PlayingCard*)card;
+                if ([otherCard.suit isEqualToString:self.suit]) {
+                    score += 1;
+                } else if (otherCard.rank == self.rank) {
+                    score += 4;
+                }
+            }
         }
     }
-    
     return score;
+    /* if you want match the otherCards each other and not only with last card choosen
+    int score = 0;
+    int numOtherCards = [otherCards count];
+    
+    if (numOtherCards) {
+        for (Card *card in otherCards) {
+            if ([card isKindOfClass:[PlayingCard class]]) {
+                PlayingCard *otherCard = (PlayingCard *)card;
+                if ([self.suit isEqualToString:otherCard.suit]) {
+                    score += 1;
+                } else if (self.rank == otherCard.rank) {
+                    score += 4;
+                }
+            }
+        }
+    }
+    if (numOtherCards > 1) {
+        score += [[otherCards firstObject] match:[otherCards subarrayWithRange:NSMakeRange(1, numOtherCards - 1)]];
+    }
+    return score;
+     */
 }
 
 

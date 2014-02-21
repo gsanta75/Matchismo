@@ -18,5 +18,5 @@
 
 @property (nonatomic, readonly) NSInteger score;
 -(void)printCardGames;
-
+@property (nonatomic) NSUInteger cardsMatchMode;
 @end

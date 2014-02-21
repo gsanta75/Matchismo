@@ -15,6 +15,7 @@
 @property (nonatomic, strong) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *matchingModeSelector;
 
 @end
 
@@ -25,6 +26,7 @@
     if(!_game){
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[[PlayingCardDeck alloc] init]];
+        [self changeModeSelector:self.matchingModeSelector];
     }
     return _game;
 }
@@ -62,6 +64,16 @@
         
         self.scoreLabel.text = [NSString stringWithFormat:@"Score :%d", self.game.score];
     }
+}
+- (IBAction)newGame:(UIButton *)sender
+{
+    self.game = nil;
+    [self updateUI];
+}
+
+- (IBAction)changeModeSelector:(UISegmentedControl *)sender
+{
+    self.game.cardsMatchMode = [[sender titleForSegmentAtIndex:sender.selectedSegmentIndex] integerValue];
 }
 
 -(NSString *)titleForCard:(Card *)card
