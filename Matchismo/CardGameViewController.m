@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *matchingModeSelector;
+@property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
 
 @end
 
@@ -34,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.lastFlippedCardsLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +48,7 @@
 {
     NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
+    self.matchingModeSelector.enabled = NO;
     [self updateUI];
 }
 
@@ -63,11 +65,41 @@
         cardButton.enabled = !card.isMatched;
         
         self.scoreLabel.text = [NSString stringWithFormat:@"Score :%d", self.game.score];
+        self.lastFlippedCardsLabel.text = [self descriptionOfLastFlippedCards:self.game.lastChosenCards];
     }
 }
+
+-(NSString *)descriptionOfLastFlippedCards:(NSArray *)lastChoosenCards
+{
+    if (self.game) {
+        
+        NSString *description = @"";
+        
+        if ([self.game.lastChosenCards count]) {
+            NSMutableArray *cardContents = [NSMutableArray array];
+            for (Card *card in self.game.lastChosenCards) {
+                [cardContents addObject:card.contents];
+            }
+            description = [cardContents componentsJoinedByString:@" "];
+        }
+        
+        if (self.game.lastScore > 0) {
+            description = [NSString stringWithFormat:@"Matched %@ for %d points.", description, self.game.lastScore];
+        } else if (self.game.lastScore < 0) {
+            
+            description = [NSString stringWithFormat:@"%@ don’t match! %d point penalty!", description, -self.game.lastScore];
+        }
+        
+        return description;
+    }else{
+        return NULL;
+    }
+}
+
 - (IBAction)newGame:(UIButton *)sender
 {
     self.game = nil;
+    self.matchingModeSelector.enabled = YES;
     [self updateUI];
 }
 

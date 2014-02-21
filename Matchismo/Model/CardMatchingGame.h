@@ -19,4 +19,6 @@
 @property (nonatomic, readonly) NSInteger score;
 -(void)printCardGames;
 @property (nonatomic) NSUInteger cardsMatchMode;
+@property (nonatomic, readonly) NSInteger lastScore;
+@property (nonatomic, readonly) NSMutableArray *lastChosenCards;
 @end
