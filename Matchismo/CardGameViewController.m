@@ -18,9 +18,18 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *matchingModeSelector;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
 
+@property (nonatomic, strong) NSMutableArray *historyFlippedCards;
+
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @end
 
 @implementation CardGameViewController
+
+-(NSMutableArray *)historyFlippedCards
+{
+    if(!_historyFlippedCards) _historyFlippedCards = [[NSMutableArray alloc] init];
+    return _historyFlippedCards;
+}
 
 -(CardMatchingGame *)game
 {
@@ -63,10 +72,45 @@
         [cardButton setBackgroundImage:[self backgroundImageForCard:card]
                     forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
-        
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score :%d", self.game.score];
-        self.lastFlippedCardsLabel.text = [self descriptionOfLastFlippedCards:self.game.lastChosenCards];
     }
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score :%d", self.game.score];
+    self.lastFlippedCardsLabel.text = [self descriptionOfLastFlippedCards:self.game.lastChosenCards];
+    self.lastFlippedCardsLabel.alpha = 1.0;
+    [self updateHistoryFlippedCards];
+    [self setSliderRange];
+    
+
+}
+
+- (IBAction)changeSlider:(UISlider *)sender
+{
+    int sliderValue;
+    sliderValue = lroundf(self.historySlider.value);
+    [self.historySlider setValue:sliderValue animated:NO];
+    if ([self.historyFlippedCards count]) {
+        self.lastFlippedCardsLabel.alpha = (sliderValue+1 < [self.historyFlippedCards count]) ? 0.6 : 1.0;
+        self.lastFlippedCardsLabel.text = [self.historyFlippedCards objectAtIndex:sliderValue];
+    }
+}
+
+-(void)updateHistoryFlippedCards
+{
+    NSString *flippedCard = self.lastFlippedCardsLabel.text;
+    if (![flippedCard isEqualToString:@""] && ![[self.historyFlippedCards lastObject] isEqualToString:flippedCard]) {
+        [self.historyFlippedCards addObject:flippedCard];
+        NSLog(@"%@", self.historyFlippedCards);
+    }
+}
+
+- (void)setSliderRange
+{
+    if([self.historyFlippedCards count]){
+        int maxValue = [self.historyFlippedCards count]-1;
+        self.historySlider.maximumValue = maxValue;
+        [self.historySlider setValue:maxValue animated:YES];
+    }
+    
 }
 
 -(NSString *)descriptionOfLastFlippedCards:(NSArray *)lastChoosenCards
@@ -100,6 +144,8 @@
 {
     self.game = nil;
     self.matchingModeSelector.enabled = YES;
+    self.historyFlippedCards = nil;
+    self.historySlider.maximumValue = 0.0;
     [self updateUI];
 }
 

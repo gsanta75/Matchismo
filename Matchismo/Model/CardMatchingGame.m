@@ -14,7 +14,7 @@
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, readwrite) NSInteger lastScore;
-@property (nonatomic, strong) NSMutableArray *lastChosenCards;
+@property (nonatomic, strong) NSArray *lastChosenCards;
 @end
 
 @implementation CardMatchingGame
@@ -61,20 +61,17 @@ static const int COST_TO_CHOOSE = 1;
 -(void)chooseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
+    self.lastScore = 0;
     
     if(!card.isMatched){
         if(card.isChosen){
             card.chosen = NO;
-            [self.lastChosenCards removeObject:card];
+            self.lastChosenCards = [self choosenCards];
         }else{
-            NSMutableArray *otherCards = [NSMutableArray array];
-            for (Card *otherCard in self.cards) {
-                if (otherCard.isChosen && !otherCard.isMatched) {
-                    [otherCards addObject:otherCard];
-                }
-            }
-            self.lastScore = 0;
-            self.lastChosenCards = [[otherCards arrayByAddingObject:card] mutableCopy];
+      
+            NSMutableArray *otherCards = [self choosenCards];
+            self.lastChosenCards = [otherCards arrayByAddingObject:card];
+
             if ([otherCards count] + 1 == self.cardsMatchMode) {
                 int matchScore = [card match:otherCards];
                 if (matchScore) {
@@ -93,9 +90,22 @@ static const int COST_TO_CHOOSE = 1;
             self.score += self.lastScore - COST_TO_CHOOSE;
             card.chosen = YES;
         }
+
     }
+
     //NSLog(@"%@", self.cards);
     [self printCardGames];
+}
+
+-(NSMutableArray *)choosenCards
+{
+    NSMutableArray *otherCards = [NSMutableArray array];
+    for (Card *otherCard in self.cards) {
+        if (otherCard.isChosen && !otherCard.isMatched) {
+            [otherCards addObject:otherCard];
+        }
+    }
+    return otherCards;
 }
 
 -(void)printCardGames
