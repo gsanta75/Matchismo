@@ -14,7 +14,6 @@
 @property (nonatomic, strong) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *matchingModeSelector;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
 
 @property (nonatomic, strong) NSMutableArray *historyFlippedCards;
@@ -35,7 +34,7 @@
     if(!_game){
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
-        [self changeModeSelector:self.matchingModeSelector];
+        
     }
     return _game;
 }
@@ -61,7 +60,6 @@
 {
     NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
-    self.matchingModeSelector.enabled = NO;
     [self updateUI];
 }
 
@@ -71,8 +69,8 @@
         NSUInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         
-        [cardButton setTitle:[self titleForCard:card]
-                    forState:UIControlStateNormal];
+        [cardButton setAttributedTitle:[self titleForCard:card]
+                              forState:UIControlStateNormal ];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card]
                     forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
@@ -147,20 +145,15 @@
 - (IBAction)newGame:(UIButton *)sender
 {
     self.game = nil;
-    self.matchingModeSelector.enabled = YES;
     self.historyFlippedCards = nil;
     self.historySlider.maximumValue = 0.0;
     [self updateUI];
 }
 
-- (IBAction)changeModeSelector:(UISegmentedControl *)sender
+-(NSAttributedString *)titleForCard:(Card *)card
 {
-    self.game.cardsMatchMode = [[sender titleForSegmentAtIndex:sender.selectedSegmentIndex] integerValue];
-}
-
--(NSString *)titleForCard:(Card *)card
-{
-    return card.isChosen ? card.contents : @"";
+    NSAttributedString *title = [[NSAttributedString alloc] initWithString:card.isChosen ? card.contents : @""];
+    return title;
 }
 
 -(UIImage *)backgroundImageForCard:(Card *)card

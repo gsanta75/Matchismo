@@ -7,7 +7,6 @@
 //
 
 #import "CardMatchingGame.h"
-#import "PlayingCard.h"
 
 @interface CardMatchingGame()
 
@@ -22,7 +21,8 @@
 
 -(NSUInteger)cardsMatchMode
 {
-    if (!_cardsMatchMode) _cardsMatchMode = 2;
+    Card *card = [self.cards firstObject];
+    if (!_cardsMatchMode) _cardsMatchMode = card.numberOfMatchingCards;
     return _cardsMatchMode;
 }
 
