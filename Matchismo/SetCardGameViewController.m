@@ -64,6 +64,37 @@
                                                   attributes:attributes];
 }
 
+-(void)updateUI
+{
+    [super updateUI];
+
+    NSString *descriptionLastFlippedCards = self.lastFlippedCardsLabel.text;
+    [self.lastFlippedCardsLabel setAttributedText:[self updateAttributeDescription:descriptionLastFlippedCards]];
+}
+
+-(NSAttributedString *)updateAttributeDescription:(NSString *)description
+{
+    NSMutableAttributedString *attributedDescription = [[[NSAttributedString alloc] initWithString:description] mutableCopy];
+    NSArray *setCards = [SetCard cardsFromText:attributedDescription.string];
+    
+      for(SetCard *setCard in setCards){
+          NSRange range = [attributedDescription.string rangeOfString:setCard.contents];
+          if(range.location != NSNotFound){
+              [attributedDescription replaceCharactersInRange:range
+                                         withAttributedString:[self titleForCard:setCard]];
+          }
+      }
+    return attributedDescription;
+}
+
+- (IBAction)changeSlider:(UISlider *)sender
+{
+    [super changeSlider:sender];
+    NSString *sliderDescription = self.lastFlippedCardsLabel.text;
+    [self.lastFlippedCardsLabel setAttributedText:[self updateAttributeDescription:sliderDescription]];
+
+}
+
 - (UIImage *)backgroundImageForCard:(Card *)card
 {
     return [UIImage imageNamed:card.chosen ? @"setCardSelected" : @"setCard"];

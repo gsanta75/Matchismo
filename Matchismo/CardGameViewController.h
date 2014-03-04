@@ -17,5 +17,8 @@
 -(NSAttributedString *)titleForCard:(Card *)card;
 -(UIImage *)backgroundImageForCard:(Card *)card;
 -(void)updateUI;
+@property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
+
+- (IBAction)changeSlider:(UISlider *)sender;
 
 @end

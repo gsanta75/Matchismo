@@ -14,11 +14,10 @@
 @property (nonatomic, strong) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
-
 @property (nonatomic, strong) NSMutableArray *historyFlippedCards;
-
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
+
+
 @end
 
 @implementation CardGameViewController
@@ -78,6 +77,7 @@
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score :%d", self.game.score];
     self.lastFlippedCardsLabel.text = [self descriptionOfLastFlippedCards:self.game.lastChosenCards];
+    
     self.lastFlippedCardsLabel.alpha = 1.0;
     [self updateHistoryFlippedCards];
     [self setSliderRange];
@@ -126,16 +126,17 @@
             for (Card *card in self.game.lastChosenCards) {
                 [cardContents addObject:card.contents];
             }
-            description = [cardContents componentsJoinedByString:@" "];
-        }
-        
-        if (self.game.lastScore > 0) {
-            description = [NSString stringWithFormat:@"Matched %@ for %d points.", description, self.game.lastScore];
-        } else if (self.game.lastScore < 0) {
             
-            description = [NSString stringWithFormat:@"%@ don’t match! %d point penalty!", description, -self.game.lastScore];
+            description = [cardContents componentsJoinedByString:@" "];
+            
+            
+            if (self.game.lastScore > 0) {
+                description = [NSString stringWithFormat:@"Matched %@ for %d points.", description, self.game.lastScore];
+            } else if (self.game.lastScore < 0) {
+                
+                description = [NSString stringWithFormat:@"%@ don’t match! %d point penalty!", description, -self.game.lastScore];
+            }
         }
-        
         return description;
     }else{
         return NULL;
