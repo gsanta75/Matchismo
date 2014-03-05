@@ -8,14 +8,13 @@
 
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
+#import "HistoryViewController.h"
 
 @interface CardGameViewController ()
 
 @property (nonatomic, strong) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (nonatomic, strong) NSMutableArray *historyFlippedCards;
-@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 
 
 @end
@@ -80,20 +79,7 @@
     
     self.lastFlippedCardsLabel.alpha = 1.0;
     [self updateHistoryFlippedCards];
-    [self setSliderRange];
-    
 
-}
-
-- (IBAction)changeSlider:(UISlider *)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(self.historySlider.value);
-    [self.historySlider setValue:sliderValue animated:NO];
-    if ([self.historyFlippedCards count]) {
-        self.lastFlippedCardsLabel.alpha = (sliderValue+1 < [self.historyFlippedCards count]) ? 0.6 : 1.0;
-        self.lastFlippedCardsLabel.text = [self.historyFlippedCards objectAtIndex:sliderValue];
-    }
 }
 
 -(void)updateHistoryFlippedCards
@@ -103,16 +89,6 @@
         [self.historyFlippedCards addObject:flippedCard];
         NSLog(@"%@", self.historyFlippedCards);
     }
-}
-
-- (void)setSliderRange
-{
-    if([self.historyFlippedCards count]){
-        int maxValue = [self.historyFlippedCards count]-1;
-        self.historySlider.maximumValue = maxValue;
-        [self.historySlider setValue:maxValue animated:YES];
-    }
-    
 }
 
 -(NSString *)descriptionOfLastFlippedCards:(NSArray *)lastChoosenCards
@@ -147,7 +123,6 @@
 {
     self.game = nil;
     self.historyFlippedCards = nil;
-    self.historySlider.maximumValue = 0.0;
     [self updateUI];
 }
 
@@ -162,4 +137,12 @@
     return [UIImage imageNamed:card.isChosen ? @"cardFront" : @"cardBack"];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showHistory"]){
+        if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]){
+            [segue.destinationViewController setHistory:self.historyFlippedCards];
+        }
+    }
+}
 @end

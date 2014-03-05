@@ -9,6 +9,7 @@
 #import "SetCardGameViewController.h"
 #import "SetCardDeck.h"
 #import "SetCard.h"
+#import "HistoryViewController.h"
 
 @interface SetCardGameViewController ()
 
@@ -68,13 +69,14 @@
 {
     [super updateUI];
 
-    NSString *descriptionLastFlippedCards = self.lastFlippedCardsLabel.text;
-    [self.lastFlippedCardsLabel setAttributedText:[self updateAttributeDescription:descriptionLastFlippedCards]];
+    NSString *lastFlippedCardDescription = self.lastFlippedCardsLabel.text;
+    [self.lastFlippedCardsLabel setAttributedText:[self replaceCardDescriptionsInText:lastFlippedCardDescription]];
 }
 
--(NSAttributedString *)updateAttributeDescription:(NSString *)description
+-(NSAttributedString *)replaceCardDescriptionsInText:(NSString *)description
 {
     NSMutableAttributedString *attributedDescription = [[[NSAttributedString alloc] initWithString:description] mutableCopy];
+    
     NSArray *setCards = [SetCard cardsFromText:attributedDescription.string];
     
       for(SetCard *setCard in setCards){
@@ -87,13 +89,6 @@
     return attributedDescription;
 }
 
-- (IBAction)changeSlider:(UISlider *)sender
-{
-    [super changeSlider:sender];
-    NSString *sliderDescription = self.lastFlippedCardsLabel.text;
-    [self.lastFlippedCardsLabel setAttributedText:[self updateAttributeDescription:sliderDescription]];
-
-}
 
 - (UIImage *)backgroundImageForCard:(Card *)card
 {
@@ -110,6 +105,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showHistory"]){
+        if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]){
+            NSMutableArray *attributedHistory = [[NSMutableArray alloc] init];
+            for(NSString *flip in self.historyFlippedCards){
+                [attributedHistory addObject:[self replaceCardDescriptionsInText:flip]];
+            }
+            [segue.destinationViewController setHistory:attributedHistory];
+        }
+    }
 }
 
 @end

@@ -18,7 +18,7 @@
 -(UIImage *)backgroundImageForCard:(Card *)card;
 -(void)updateUI;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
+@property (nonatomic, strong) NSMutableArray *historyFlippedCards;
 
-- (IBAction)changeSlider:(UISlider *)sender;
 
 @end

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Playing Card Game View Controller - Item-->
+        <!--Playing Card Game View Controller - Playing Card-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="PlayingCardGameViewController" sceneMemberID="viewController">
@@ -17,72 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StA-7C-ywV">
-                                <rect key="frame" x="20" y="20" width="40" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OIn-iq-mni"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfQ-As-x8Y">
-                                <rect key="frame" x="68" y="20" width="40" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2dv-Kh-bgI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz4-rh-1V6">
-                                <rect key="frame" x="116" y="20" width="40" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="s83-3N-9Pm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mie-yO-IEr">
-                                <rect key="frame" x="166" y="20" width="40" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SbX-AY-fY1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-vd-3vf">
-                                <rect key="frame" x="214" y="20" width="40" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jeZ-NY-mHd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6I-ma-hZP">
-                                <rect key="frame" x="260" y="20" width="40" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PaL-0P-YYs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-h9-nOm">
                                 <rect key="frame" x="20" y="88" width="40" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -371,27 +305,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="CJ6-k5-dhN">
-                                <rect key="frame" x="14" y="418" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changeSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="P6g-5n-M84"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Gii-CX-JUO"/>
+                    <navigationItem key="navigationItem" title="Playing Card" id="ljz-vV-mdz">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="ika-q1-WNq">
+                            <connections>
+                                <segue destination="PwS-IS-wrH" kind="push" identifier="showHistory" id="f58-KV-jTR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="historySlider" destination="CJ6-k5-dhN" id="iSl-ka-85F"/>
                         <outlet property="lastFlippedCardsLabel" destination="Jvc-Ji-PP4" id="u5r-C4-TF0"/>
                         <outlet property="scoreLabel" destination="zNN-NE-cpL" id="WpW-ZC-Ifm"/>
-                        <outletCollection property="cardButtons" destination="StA-7C-ywV" id="T1t-Ib-7Dx"/>
-                        <outletCollection property="cardButtons" destination="RfQ-As-x8Y" id="8hT-gk-QZ1"/>
-                        <outletCollection property="cardButtons" destination="Pz4-rh-1V6" id="aTg-4d-izc"/>
-                        <outletCollection property="cardButtons" destination="mie-yO-IEr" id="lgU-ff-sdL"/>
-                        <outletCollection property="cardButtons" destination="7ax-vd-3vf" id="kbg-uQ-gTg"/>
-                        <outletCollection property="cardButtons" destination="h6I-ma-hZP" id="ES9-2C-Tmw"/>
                         <outletCollection property="cardButtons" destination="lpb-h9-nOm" id="aAO-Pd-KL4"/>
                         <outletCollection property="cardButtons" destination="JH1-bK-93o" id="ngp-XE-W54"/>
                         <outletCollection property="cardButtons" destination="NyV-8E-1rQ" id="0LH-Gu-xxh"/>
@@ -420,7 +346,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="-179"/>
+            <point key="canvasLocation" x="1060" y="-179"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="OaZ-uj-Kwf">
+            <objects>
+                <viewController id="PwS-IS-wrH" customClass="HistoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nEy-Fd-9W3"/>
+                        <viewControllerLayoutGuide type="bottom" id="6w2-XW-7Fw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ipJ-d1-tBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPP-W7-oEb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NZA-WW-eza"/>
+                    <connections>
+                        <outlet property="historyTextView" destination="cPP-W7-oEb" id="ete-52-qVW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Pp-1g-Hcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1615" y="173"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="je4-lp-gk6">
@@ -433,15 +390,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="Gr1-KB-TzT"/>
-                        <segue destination="eDl-KF-HX0" kind="relationship" relationship="viewControllers" id="xgW-At-Nv7"/>
+                        <segue destination="Fil-0G-IiR" kind="relationship" relationship="viewControllers" id="Gr1-KB-TzT"/>
+                        <segue destination="Xgt-Sp-2yg" kind="relationship" relationship="viewControllers" id="xgW-At-Nv7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdy-bj-TeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-36" y="116"/>
         </scene>
-        <!--Set Card Game View Controller - Item-->
+        <!--Set Card Game View Controller - SetCard-->
         <scene sceneID="AOP-tC-Fss">
             <objects>
                 <viewController id="eDl-KF-HX0" customClass="SetCardGameViewController" sceneMemberID="viewController">
@@ -453,74 +410,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAX-ZR-YMF">
-                                <rect key="frame" x="20" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="setCard">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="Tfb-nH-G8X"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kp-7R-G7O">
-                                <rect key="frame" x="68" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="setCard">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="L5a-WJ-WDY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHc-pb-F99">
-                                <rect key="frame" x="116" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="setCard">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="Klt-cc-lsO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhE-zn-XCe">
-                                <rect key="frame" x="166" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="setCard">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="Mwe-tL-SUE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4T-Gx-AUI">
-                                <rect key="frame" x="214" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="setCard">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="usj-or-VNL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vp-YA-ykw">
-                                <rect key="frame" x="260" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="setCard">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="0c4-0l-9i3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43Y-oj-rhX">
-                                <rect key="frame" x="20" y="68" width="40" height="40"/>
+                                <rect key="frame" x="20" y="72" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -531,7 +422,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgH-Hv-Ovd">
-                                <rect key="frame" x="68" y="68" width="40" height="40"/>
+                                <rect key="frame" x="68" y="72" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -542,7 +433,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyA-tL-SK8">
-                                <rect key="frame" x="116" y="68" width="40" height="40"/>
+                                <rect key="frame" x="116" y="72" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -553,7 +444,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1M-vo-8Ji">
-                                <rect key="frame" x="166" y="68" width="40" height="40"/>
+                                <rect key="frame" x="166" y="72" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -564,7 +455,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9b-9H-WDh">
-                                <rect key="frame" x="214" y="68" width="40" height="40"/>
+                                <rect key="frame" x="214" y="72" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -575,7 +466,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBJ-Oa-rZr">
-                                <rect key="frame" x="260" y="68" width="40" height="40"/>
+                                <rect key="frame" x="260" y="72" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -586,7 +477,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-MH-aET">
-                                <rect key="frame" x="20" y="116" width="40" height="40"/>
+                                <rect key="frame" x="20" y="120" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -597,7 +488,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88K-j7-0wg">
-                                <rect key="frame" x="68" y="116" width="40" height="40"/>
+                                <rect key="frame" x="68" y="120" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -608,7 +499,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANQ-4p-Z5J">
-                                <rect key="frame" x="116" y="116" width="40" height="40"/>
+                                <rect key="frame" x="116" y="120" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -619,7 +510,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-E2-bSw">
-                                <rect key="frame" x="166" y="116" width="40" height="40"/>
+                                <rect key="frame" x="166" y="120" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -630,7 +521,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMU-kr-UUe">
-                                <rect key="frame" x="214" y="116" width="40" height="40"/>
+                                <rect key="frame" x="214" y="120" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -641,7 +532,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20N-Yx-1jU">
-                                <rect key="frame" x="260" y="116" width="40" height="40"/>
+                                <rect key="frame" x="260" y="120" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -652,7 +543,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zf8-fd-DtL">
-                                <rect key="frame" x="20" y="164" width="40" height="40"/>
+                                <rect key="frame" x="20" y="168" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -663,7 +554,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Im-gH-C9M">
-                                <rect key="frame" x="68" y="164" width="40" height="40"/>
+                                <rect key="frame" x="68" y="168" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -674,7 +565,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-lh-Ckg">
-                                <rect key="frame" x="116" y="164" width="40" height="40"/>
+                                <rect key="frame" x="116" y="168" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -685,7 +576,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQh-uW-Bxr">
-                                <rect key="frame" x="166" y="164" width="40" height="40"/>
+                                <rect key="frame" x="166" y="168" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -696,7 +587,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRr-IE-Ii4">
-                                <rect key="frame" x="214" y="164" width="40" height="40"/>
+                                <rect key="frame" x="214" y="168" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -707,7 +598,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oE-lE-yho">
-                                <rect key="frame" x="260" y="164" width="40" height="40"/>
+                                <rect key="frame" x="260" y="168" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -718,7 +609,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdF-br-S2O">
-                                <rect key="frame" x="20" y="212" width="40" height="40"/>
+                                <rect key="frame" x="20" y="216" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -729,7 +620,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88a-fM-FnY">
-                                <rect key="frame" x="68" y="212" width="40" height="40"/>
+                                <rect key="frame" x="68" y="216" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -740,7 +631,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pW-hD-fif">
-                                <rect key="frame" x="116" y="212" width="40" height="40"/>
+                                <rect key="frame" x="116" y="216" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -751,7 +642,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjp-bJ-2wa">
-                                <rect key="frame" x="166" y="212" width="40" height="40"/>
+                                <rect key="frame" x="166" y="216" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -762,7 +653,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-sE-uD5">
-                                <rect key="frame" x="214" y="212" width="40" height="40"/>
+                                <rect key="frame" x="214" y="216" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -773,7 +664,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaP-i8-oAx">
-                                <rect key="frame" x="260" y="212" width="40" height="40"/>
+                                <rect key="frame" x="260" y="216" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -807,15 +698,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="dX2-lS-1o6">
-                                <rect key="frame" x="14" y="418" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changeSlider:" destination="eDl-KF-HX0" eventType="valueChanged" id="ZGR-Kd-kKJ"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBp-Fv-4c8">
-                                <rect key="frame" x="20" y="260" width="40" height="40"/>
+                                <rect key="frame" x="20" y="264" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -826,7 +710,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jco-2L-Owe">
-                                <rect key="frame" x="68" y="260" width="40" height="40"/>
+                                <rect key="frame" x="68" y="264" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -837,7 +721,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOQ-Q4-OlT">
-                                <rect key="frame" x="116" y="260" width="40" height="40"/>
+                                <rect key="frame" x="116" y="264" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -848,7 +732,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bL-92-dQT">
-                                <rect key="frame" x="166" y="260" width="40" height="40"/>
+                                <rect key="frame" x="166" y="264" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -859,7 +743,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-jF-2Hb">
-                                <rect key="frame" x="214" y="260" width="40" height="40"/>
+                                <rect key="frame" x="214" y="264" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -870,7 +754,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-R0-hB7">
-                                <rect key="frame" x="260" y="260" width="40" height="40"/>
+                                <rect key="frame" x="260" y="264" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -881,7 +765,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyx-UW-iGF">
-                                <rect key="frame" x="20" y="308" width="40" height="40"/>
+                                <rect key="frame" x="20" y="312" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -892,7 +776,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfl-dh-5Vu">
-                                <rect key="frame" x="68" y="308" width="40" height="40"/>
+                                <rect key="frame" x="68" y="312" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -903,7 +787,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Za-h9-T2B">
-                                <rect key="frame" x="116" y="308" width="40" height="40"/>
+                                <rect key="frame" x="116" y="312" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -914,7 +798,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xk0-TK-NU7">
-                                <rect key="frame" x="166" y="308" width="40" height="40"/>
+                                <rect key="frame" x="166" y="312" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -925,7 +809,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMR-Sw-KPA">
-                                <rect key="frame" x="214" y="308" width="40" height="40"/>
+                                <rect key="frame" x="214" y="312" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -936,7 +820,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-lf-kFL">
-                                <rect key="frame" x="260" y="308" width="40" height="40"/>
+                                <rect key="frame" x="260" y="312" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" backgroundImage="setCard">
@@ -949,17 +833,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="aZG-qJ-f97"/>
+                    <navigationItem key="navigationItem" title="SetCard" id="Gnm-wr-aG2">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="eim-2b-dRM">
+                            <connections>
+                                <segue destination="PwS-IS-wrH" kind="push" identifier="showHistory" id="TXL-e7-X52"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="historySlider" destination="dX2-lS-1o6" id="jH2-Af-o7m"/>
                         <outlet property="lastFlippedCardsLabel" destination="k1X-Vi-yAR" id="Jtd-Ze-B7d"/>
                         <outlet property="scoreLabel" destination="ZGD-qm-58l" id="0oh-jm-DE6"/>
-                        <outletCollection property="cardButtons" destination="kAX-ZR-YMF" id="pGJ-75-VKv"/>
-                        <outletCollection property="cardButtons" destination="4Kp-7R-G7O" id="hZI-oC-P3p"/>
-                        <outletCollection property="cardButtons" destination="XHc-pb-F99" id="ieo-wo-ixe"/>
-                        <outletCollection property="cardButtons" destination="RhE-zn-XCe" id="6pG-aa-pc0"/>
-                        <outletCollection property="cardButtons" destination="x4T-Gx-AUI" id="kSX-Y9-JqD"/>
-                        <outletCollection property="cardButtons" destination="4Vp-YA-ykw" id="udH-a3-hCe"/>
                         <outletCollection property="cardButtons" destination="43Y-oj-rhX" id="xwX-Ul-KbJ"/>
                         <outletCollection property="cardButtons" destination="zgH-Hv-Ovd" id="KVe-5T-Wqn"/>
                         <outletCollection property="cardButtons" destination="dyA-tL-SK8" id="5Az-Om-ruI"/>
@@ -1000,6 +883,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xd-7B-1gK" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1060" y="509"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="mdf-7a-wyj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fil-0G-IiR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Gii-CX-JUO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJw-S0-o0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="puf-JO-fWQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETn-DH-xHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="-179"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="yd8-4R-nJw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgt-Sp-2yg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="aZG-qJ-f97"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DdE-77-HVX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eDl-KF-HX0" kind="relationship" relationship="rootViewController" id="Q7B-D4-rp4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Et8-wP-PHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="534" y="509"/>
         </scene>
     </scenes>
@@ -1012,4 +933,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="TXL-e7-X52"/>
+    </inferredMetricsTieBreakers>
 </document>
