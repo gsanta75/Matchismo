@@ -7,14 +7,13 @@
 //
 
 #import "CardGameViewController.h"
-#import "CardMatchingGame.h"
 #import "HistoryViewController.h"
 
 @interface CardGameViewController ()
 
-@property (nonatomic, strong) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (nonatomic, strong) CardMatchingGame *game;
+@property (nonatomic, strong) GameSettings *gSettings;
 
 
 @end
@@ -27,11 +26,26 @@
     return _historyFlippedCards;
 }
 
+-(GameSettings *)gSettings
+{
+    if(!_gSettings) _gSettings = [[GameSettings alloc] init];
+    return _gSettings;
+}
+
+-(GameResult *)gameResult
+{
+    return nil; //Abstract
+}
+
 -(CardMatchingGame *)game
 {
     if(!_game){
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
+        
+        _game.matchBonus = self.gSettings.matchBonus;
+        _game.mismatchPenalty = self.gSettings.mismatchPenalty;
+        _game.flipCost = self.gSettings.flipCost;
         
     }
     return _game;
@@ -39,13 +53,21 @@
 
 -(Deck *)createDeck
 {
-    return nil; //abstract
-    
+    return nil;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.lastFlippedCardsLabel.text = @"";
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.game.mismatchPenalty = self.gSettings.mismatchPenalty;
+    self.game.matchBonus = self.gSettings.matchBonus;
+    self.game.flipCost = self.gSettings.flipCost;
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,12 +96,12 @@
         cardButton.enabled = !card.isMatched;
     }
     
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score :%d", self.game.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score :%ld", (long)self.game.score];
     self.lastFlippedCardsLabel.text = [self descriptionOfLastFlippedCards:self.game.lastChosenCards];
     
     self.lastFlippedCardsLabel.alpha = 1.0;
     [self updateHistoryFlippedCards];
-
+    self.gameResult.score = self.game.score;
 }
 
 -(void)updateHistoryFlippedCards
@@ -107,10 +129,10 @@
             
             
             if (self.game.lastScore > 0) {
-                description = [NSString stringWithFormat:@"Matched %@ for %d points.", description, self.game.lastScore];
+                description = [NSString stringWithFormat:@"Matched %@ for %ld points.", description, (long)self.game.lastScore];
             } else if (self.game.lastScore < 0) {
                 
-                description = [NSString stringWithFormat:@"%@ don’t match! %d point penalty!", description, -self.game.lastScore];
+                description = [NSString stringWithFormat:@"%@ don’t match! %ld point penalty!", description, (long)-self.game.lastScore];
             }
         }
         return description;
@@ -123,6 +145,7 @@
 {
     self.game = nil;
     self.historyFlippedCards = nil;
+    self.gameResult = nil;
     [self updateUI];
 }
 
@@ -145,4 +168,6 @@
         }
     }
 }
+
+
 @end

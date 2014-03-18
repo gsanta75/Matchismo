@@ -17,6 +17,15 @@
 
 @implementation SetCardGameViewController
 
+@synthesize gameResult = _gameResult;
+
+-(GameResult *)gameResult
+{
+    if(!_gameResult) _gameResult = [[GameResult alloc] init];
+    _gameResult.gameType = @"SetCard";
+    return _gameResult;
+}
+
 -(Deck *)createDeck
 {
     return [[SetCardDeck alloc] init];

@@ -11,13 +11,16 @@
 @interface CardMatchingGame()
 
 @property (nonatomic, readwrite) NSInteger score;
-@property (nonatomic, strong) NSMutableArray *cards;
+@property (nonatomic, strong) NSMutableArray *cards; // of Cards
 @property (nonatomic, readwrite) NSInteger lastScore;
-@property (nonatomic, strong) NSArray *lastChosenCards;
+@property (nonatomic, strong) NSArray *lastChosenCards; // of Cards
 @end
 
 @implementation CardMatchingGame
 
+static const int MISMATCH_PENALTY = 2;
+static const int MATCH_BONUS = 4;
+static const int COST_TO_CHOOSE = 1;
 
 -(NSUInteger)cardsMatchMode
 {
@@ -44,6 +47,9 @@
                 self = nil;
                 break;
             }
+            _matchBonus = MATCH_BONUS;
+            _mismatchPenalty = MISMATCH_PENALTY;
+            _flipCost = COST_TO_CHOOSE;
         }
     }
     return self;
@@ -54,9 +60,7 @@
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
-static const int MISMATCH_PENALTY = 2;
-static const int MATCH_BONUS = 4;
-static const int COST_TO_CHOOSE = 1;
+
 
 -(void)chooseCardAtIndex:(NSUInteger)index
 {
@@ -64,6 +68,7 @@ static const int COST_TO_CHOOSE = 1;
     self.lastScore = 0;
     
     if(!card.isMatched){
+        
         if(card.isChosen){
             card.chosen = NO;
             self.lastChosenCards = [self choosenCards];
@@ -75,19 +80,19 @@ static const int COST_TO_CHOOSE = 1;
             if ([otherCards count] + 1 == self.cardsMatchMode) {
                 int matchScore = [card match:otherCards];
                 if (matchScore) {
-                    self.lastScore += matchScore * MATCH_BONUS;
+                    self.lastScore += matchScore * self.matchBonus;// MATCH_BONUS;
                     card.matched = YES;
                     for (Card *otherCard in otherCards) {
                         otherCard.matched = YES;
                     }
                 } else {
-                    self.lastScore -= MISMATCH_PENALTY;
+                    self.lastScore -= self.mismatchPenalty;// MISMATCH_PENALTY;
                     for (Card *otherCard in otherCards) {
                         otherCard.chosen = NO;
                     }
                 }
             }
-            self.score += self.lastScore - COST_TO_CHOOSE;
+            self.score += self.lastScore - self.flipCost;// COST_TO_CHOOSE;
             card.chosen = YES;
         }
 
@@ -111,7 +116,7 @@ static const int COST_TO_CHOOSE = 1;
 -(void)printCardGames
 {
     for(Card *card in self.cards){
-        NSLog(@"%d %@ %d %d", [self.cards indexOfObject:card], card.contents, card.isChosen, card.isMatched);
+        NSLog(@"%lu %@ %d %d", (unsigned long)[self.cards indexOfObject:card], card.contents, card.isChosen, card.isMatched);
     }
     NSLog(@"\n");
 }

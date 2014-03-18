@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Deck.h"
+#import "GameResult.h"
+#import "CardMatchingGame.h"
+#import "GameSettings.h"
 
 @interface CardGameViewController : UIViewController
 
@@ -19,6 +22,7 @@
 -(void)updateUI;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
 @property (nonatomic, strong) NSMutableArray *historyFlippedCards;
-
+@property (nonatomic, strong) GameResult *gameResult;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @end

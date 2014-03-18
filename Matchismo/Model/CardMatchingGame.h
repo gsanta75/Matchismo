@@ -18,8 +18,16 @@
 -(Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) NSInteger score;
--(void)printCardGames;
+
+-(void)printCardGames; //my descriptor for log
+
 @property (nonatomic) NSUInteger cardsMatchMode;
 @property (nonatomic, readonly) NSInteger lastScore;
 @property (nonatomic, readonly) NSArray *lastChosenCards;
+
+// API for GameSettings class
+@property (nonatomic) NSInteger matchBonus;
+@property (nonatomic) NSInteger mismatchPenalty;
+@property (nonatomic) NSInteger flipCost;
+
 @end

@@ -15,6 +15,15 @@
 
 @implementation PlayingCardGameViewController
 
+@synthesize gameResult = _gameResult;
+
+-(GameResult *)gameResult
+{
+    if(!_gameResult) _gameResult = [[GameResult alloc] init];
+    _gameResult.gameType = @"PlayingCard";
+    return _gameResult;
+}
+
 -(Deck *)createDeck
 {
     return [[PlayingCardDeck alloc] init];
