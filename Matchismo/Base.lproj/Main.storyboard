@@ -308,13 +308,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Playing Card" id="ljz-vV-mdz">
-                        <barButtonItem key="rightBarButtonItem" title="History" id="ika-q1-WNq">
-                            <connections>
-                                <segue destination="PwS-IS-wrH" kind="push" identifier="showHistory" id="f58-KV-jTR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Playing Card" id="iKs-aG-2uF"/>
+                    <navigationItem key="navigationItem" title="Playing Card" id="ljz-vV-mdz"/>
                     <connections>
                         <outlet property="lastFlippedCardsLabel" destination="Jvc-Ji-PP4" id="u5r-C4-TF0"/>
                         <outlet property="scoreLabel" destination="zNN-NE-cpL" id="WpW-ZC-Ifm"/>
@@ -346,38 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-539"/>
-        </scene>
-        <!--History View Controller-->
-        <scene sceneID="OaZ-uj-Kwf">
-            <objects>
-                <viewController id="PwS-IS-wrH" customClass="HistoryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nEy-Fd-9W3"/>
-                        <viewControllerLayoutGuide type="bottom" id="6w2-XW-7Fw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ipJ-d1-tBZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPP-W7-oEb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="NZA-WW-eza"/>
-                    <connections>
-                        <outlet property="historyTextView" destination="cPP-W7-oEb" id="ete-52-qVW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Pp-1g-Hcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1671" y="-187"/>
+            <point key="canvasLocation" x="-18" y="-981"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="je4-lp-gk6">
@@ -390,15 +354,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Fil-0G-IiR" kind="relationship" relationship="viewControllers" id="Gr1-KB-TzT"/>
-                        <segue destination="Xgt-Sp-2yg" kind="relationship" relationship="viewControllers" id="xgW-At-Nv7"/>
-                        <segue destination="wLf-5y-uYP" kind="relationship" relationship="viewControllers" id="WxA-hu-XWX"/>
-                        <segue destination="CJw-Lb-zaf" kind="relationship" relationship="viewControllers" id="1mj-YU-9Ld"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="kih-D2-pFd"/>
+                        <segue destination="eDl-KF-HX0" kind="relationship" relationship="viewControllers" id="Rf6-iB-Nou"/>
+                        <segue destination="wLf-5y-uYP" kind="relationship" relationship="viewControllers" id="Yow-DN-2fH"/>
+                        <segue destination="CJw-Lb-zaf" kind="relationship" relationship="viewControllers" id="Weo-P2-GRw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdy-bj-TeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="116"/>
+            <point key="canvasLocation" x="-736" y="88"/>
         </scene>
         <!--Set Card Game View Controller - SetCard-->
         <scene sceneID="AOP-tC-Fss">
@@ -835,13 +799,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="SetCard" id="Gnm-wr-aG2">
-                        <barButtonItem key="rightBarButtonItem" title="History" id="eim-2b-dRM">
-                            <connections>
-                                <segue destination="PwS-IS-wrH" kind="push" identifier="showHistory" id="TXL-e7-X52"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Set Card" id="g9d-xe-vqB"/>
+                    <navigationItem key="navigationItem" title="SetCard" id="Gnm-wr-aG2"/>
                     <connections>
                         <outlet property="lastFlippedCardsLabel" destination="k1X-Vi-yAR" id="Jtd-Ze-B7d"/>
                         <outlet property="scoreLabel" destination="ZGD-qm-58l" id="0oh-jm-DE6"/>
@@ -885,45 +844,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xd-7B-1gK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="149"/>
-        </scene>
-        <!--Navigation Controller - PlayingCard-->
-        <scene sceneID="mdf-7a-wyj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fil-0G-IiR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PlayingCard" id="Gii-CX-JUO"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJw-S0-o0Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="puf-JO-fWQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ETn-DH-xHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="590" y="-539"/>
-        </scene>
-        <!--Navigation Controller - SetCard-->
-        <scene sceneID="yd8-4R-nJw">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgt-Sp-2yg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SetCard" id="aZG-qJ-f97"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DdE-77-HVX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="eDl-KF-HX0" kind="relationship" relationship="rootViewController" id="Q7B-D4-rp4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Et8-wP-PHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="590" y="149"/>
+            <point key="canvasLocation" x="-2" y="-245"/>
         </scene>
         <!--Game Result View Controller - GameResults-->
         <scene sceneID="J9K-d8-wo3">
@@ -986,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shh-x5-EN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="882"/>
+            <point key="canvasLocation" x="-9" y="470"/>
         </scene>
         <!--Settings Game View Controller - Settings-->
         <scene sceneID="GSz-nh-Jup">
@@ -1075,7 +996,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJw-yh-of6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="882"/>
+            <point key="canvasLocation" x="6" y="1150"/>
         </scene>
     </scenes>
     <resources>
@@ -1087,7 +1008,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="TXL-e7-X52"/>
-    </inferredMetricsTieBreakers>
 </document>

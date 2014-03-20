@@ -7,7 +7,6 @@
 //
 
 #import "CardGameViewController.h"
-#import "HistoryViewController.h"
 
 @interface CardGameViewController ()
 
@@ -19,12 +18,6 @@
 @end
 
 @implementation CardGameViewController
-
--(NSMutableArray *)historyFlippedCards
-{
-    if(!_historyFlippedCards) _historyFlippedCards = [[NSMutableArray alloc] init];
-    return _historyFlippedCards;
-}
 
 -(GameSettings *)gSettings
 {
@@ -100,17 +93,7 @@
     self.lastFlippedCardsLabel.text = [self descriptionOfLastFlippedCards:self.game.lastChosenCards];
     
     self.lastFlippedCardsLabel.alpha = 1.0;
-    [self updateHistoryFlippedCards];
     self.gameResult.score = self.game.score;
-}
-
--(void)updateHistoryFlippedCards
-{
-    NSString *flippedCard = self.lastFlippedCardsLabel.text;
-    if (![flippedCard isEqualToString:@""] && ![[self.historyFlippedCards lastObject] isEqualToString:flippedCard]) {
-        [self.historyFlippedCards addObject:flippedCard];
-        NSLog(@"%@", self.historyFlippedCards);
-    }
 }
 
 -(NSString *)descriptionOfLastFlippedCards:(NSArray *)lastChoosenCards
@@ -144,7 +127,6 @@
 - (IBAction)newGame:(UIButton *)sender
 {
     self.game = nil;
-    self.historyFlippedCards = nil;
     self.gameResult = nil;
     [self updateUI];
 }
@@ -160,14 +142,6 @@
     return [UIImage imageNamed:card.isChosen ? @"cardFront" : @"cardBack"];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"showHistory"]){
-        if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]){
-            [segue.destinationViewController setHistory:self.historyFlippedCards];
-        }
-    }
-}
 
 
 @end

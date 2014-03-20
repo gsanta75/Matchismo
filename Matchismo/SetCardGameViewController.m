@@ -116,17 +116,5 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"showHistory"]){
-        if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]){
-            NSMutableArray *attributedHistory = [[NSMutableArray alloc] init];
-            for(NSString *flip in self.historyFlippedCards){
-                [attributedHistory addObject:[self replaceCardDescriptionsInText:flip]];
-            }
-            [segue.destinationViewController setHistory:attributedHistory];
-        }
-    }
-}
 
 @end

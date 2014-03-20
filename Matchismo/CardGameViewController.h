@@ -21,7 +21,6 @@
 -(UIImage *)backgroundImageForCard:(Card *)card;
 -(void)updateUI;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
-@property (nonatomic, strong) NSMutableArray *historyFlippedCards;
 @property (nonatomic, strong) GameResult *gameResult;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
