@@ -17,11 +17,14 @@
 // protected
 // for subclasses
 -(Deck *)createDeck;
--(NSAttributedString *)titleForCard:(Card *)card;
--(UIImage *)backgroundImageForCard:(Card *)card;
+
 -(void)updateUI;
 @property (weak, nonatomic) IBOutlet UILabel *lastFlippedCardsLabel;
 @property (nonatomic, strong) GameResult *gameResult;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (nonatomic) NSUInteger numberOfStartingCards;
+@property (nonatomic) CGSize maxCardSize;
+
+- (UIView *)createViewForCard:(Card *)card;
+- (void)updateView:(UIView *)view forCard:(Card *)card;
 
 @end

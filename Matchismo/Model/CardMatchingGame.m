@@ -22,6 +22,11 @@ static const int MISMATCH_PENALTY = 2;
 static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOSE = 1;
 
+-(NSUInteger) numberOfDealtCards
+{
+    return [self.cards count];
+}
+
 -(NSUInteger)cardsMatchMode
 {
     Card *card = [self.cards firstObject];

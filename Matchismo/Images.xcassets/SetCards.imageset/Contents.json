@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "setCardSelected.png"
+      "filename" : "SetCards.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "setCardSelected@2x.png"
+      "filename" : "SetCards@2x.png"
     }
   ],
   "info" : {

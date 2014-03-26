@@ -30,4 +30,5 @@
 @property (nonatomic) NSInteger mismatchPenalty;
 @property (nonatomic) NSInteger flipCost;
 
+@property (nonatomic, readonly) NSUInteger numberOfDealtCards;
 @end
