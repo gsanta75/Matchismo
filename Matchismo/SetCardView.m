@@ -55,10 +55,13 @@
     [self setNeedsDisplay];
 }
 
+#pragma mark - Drawing
+
+#define CORNER_RADIUS 0.1
 - (void)drawRect:(CGRect)rect
 {
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                           cornerRadius:12.0];
+                                                           cornerRadius:self.bounds.size.width * CORNER_RADIUS];
     [roundedRect addClip];
     
     if (self.chosen) {

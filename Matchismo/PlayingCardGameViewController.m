@@ -34,7 +34,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.numberOfStartingCards = 4;
+    self.numberOfStartingCards = 15;
     self.maxCardSize = CGSizeMake(80.0, 120.0);
     [self updateUI];
 }
@@ -58,5 +58,6 @@
     playingCardView.faceUp = playingCard.chosen;
     
 }
+
 
 @end

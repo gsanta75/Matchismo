@@ -15,5 +15,6 @@
 -(void)addCard:(Card *)card;
 -(Card *)drawRandomCard;
 -(void)printAllCards;
+@property (nonatomic, readonly) NSMutableArray *cards; //of Cards
 
 @end

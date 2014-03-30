@@ -59,8 +59,13 @@
     setCardView.shading = setCard.shading;
     setCardView.number = setCard.number;
     setCardView.chosen = setCard.chosen;
+
 }
 
+-(void)updateMinimumNumberOfCellGrid
+{
+    self.grid.minimumNumberOfCells = [self.cardViews count];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *cards; // of Cards
 @property (nonatomic, readwrite) NSInteger lastScore;
 @property (nonatomic, strong) NSArray *lastChosenCards; // of Cards
+@property (nonatomic, strong) Deck *deck; // for add new card diuring playgame
 @end
 
 @implementation CardMatchingGame
@@ -44,8 +45,9 @@ static const int COST_TO_CHOOSE = 1;
 {
     self = [super init];
     if(self){
+        _deck = deck;
         for(int i=0; i<count; i++){
-            Card *card = [deck drawRandomCard];
+            Card *card = [self.deck drawRandomCard];
             if(card){
                 [self.cards addObject:card];
             }else{
@@ -103,7 +105,7 @@ static const int COST_TO_CHOOSE = 1;
 
     }
 
-    //NSLog(@"%@", self.cards);
+    NSLog(@"%@", self.cards);
     [self printCardGames];
 }
 
@@ -126,5 +128,25 @@ static const int COST_TO_CHOOSE = 1;
     NSLog(@"\n");
 }
 
+-(void)drawNewCard
+{
+    Card *card = [self.deck drawRandomCard];
+    if (card) {
+        [self.cards addObject:card];
+    }
+}
+
+- (BOOL)deckIsEmpty
+{
+    /*
+    Card *card = [self.deck drawRandomCard];
+    if (card) {
+        [self.deck addCard:card];
+        return NO;
+    }
+    return YES;
+     */
+    return [self.deck.cards count] ? NO : YES;
+}
 
 @end

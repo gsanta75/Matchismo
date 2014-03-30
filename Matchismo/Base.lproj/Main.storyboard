@@ -121,12 +121,24 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1B-So-Lk5">
+                                <rect key="frame" x="214" y="465" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="+3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCardsButton:" destination="eDl-KF-HX0" eventType="touchUpInside" id="a9g-de-t1Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1181569343" green="0.49401231750000002" blue="0.22579265509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Set Card" image="SetCards" id="g9d-xe-vqB"/>
                     <navigationItem key="navigationItem" title="SetCard" id="Gnm-wr-aG2"/>
                     <connections>
+                        <outlet property="addNewCardsButton" destination="C1B-So-Lk5" id="XqS-xC-PMM"/>
                         <outlet property="gridView" destination="eYo-Qx-t2s" id="bWC-MS-Wei"/>
                         <outlet property="lastFlippedCardsLabel" destination="k1X-Vi-yAR" id="Jtd-Ze-B7d"/>
                         <outlet property="scoreLabel" destination="ZGD-qm-58l" id="0oh-jm-DE6"/>

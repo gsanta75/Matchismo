@@ -30,5 +30,9 @@
 @property (nonatomic) NSInteger mismatchPenalty;
 @property (nonatomic) NSInteger flipCost;
 
+//API for UI in CardGameViewController
 @property (nonatomic, readonly) NSUInteger numberOfDealtCards;
+-(void)drawNewCard;
+@property (nonatomic, readonly) BOOL deckIsEmpty;
+
 @end
