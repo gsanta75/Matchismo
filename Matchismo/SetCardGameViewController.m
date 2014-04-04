@@ -37,6 +37,7 @@
     [super viewDidLoad];
     self.numberOfStartingCards = 12;
     self.maxCardSize = CGSizeMake(90.0, 120.0);
+    self.removingMatchingCards = YES;
     [self updateUI];
 }
 
@@ -62,10 +63,6 @@
 
 }
 
--(void)updateMinimumNumberOfCellGrid
-{
-    self.grid.minimumNumberOfCells = [self.cardViews count];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

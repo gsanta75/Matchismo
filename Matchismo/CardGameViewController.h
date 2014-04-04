@@ -29,8 +29,6 @@
 - (UIView *)createViewForCard:(Card *)card;
 - (void)updateView:(UIView *)view forCard:(Card *)card;
 @property (nonatomic, strong) NSMutableArray *cardViews;
-@property (nonatomic, strong) Grid *grid;
-
+@property (nonatomic) BOOL removingMatchingCards;
 -(void)updateMatchedCards;
--(void)updateMinimumNumberOfCellGrid;
 @end

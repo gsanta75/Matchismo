@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic, strong) GameSettings *gSettings;
 @property (nonatomic, strong) CardMatchingGame *game;
+@property (nonatomic, strong) Grid *grid;
 
 @property (weak, nonatomic) IBOutlet UIView *gridView;
 @property (weak, nonatomic) IBOutlet UIButton *addNewCardsButton;
@@ -45,10 +46,6 @@
     [self updateUI];
 }
 
--(void)updateMinimumNumberOfCellGrid
-{
-    //abstract
-}
 
 -(NSMutableArray *)cardViews
 {
@@ -134,7 +131,7 @@
                                                                                       action:@selector(touchCard:)];
                 [cardView addGestureRecognizer:tap];
                 [self.cardViews addObject:cardView];
-                viewIndex = [self.cardViews indexOfObject:cardView];
+                //viewIndex = [self.cardViews indexOfObject:cardView];
                 [self.gridView addSubview:cardView];
             }
         } else {
@@ -142,19 +139,40 @@
             if(!card.matched){
                 [self updateView:cardView forCard:card];
             }else{
-                [cardView removeFromSuperview];
-                [self.cardViews removeObject:cardView];
+                if(self.removingMatchingCards){
+                    [self.cardViews removeObject:cardView];
+                    [UIView animateWithDuration:1.0
+                                     animations:^{
+                                         cardView.frame = CGRectMake(0.0, self.gridView.bounds.size.height,
+                                                                     self.grid.cellSize.width, self.grid.cellSize.height);
+                                     } completion:^(BOOL finished) {
+                                         [cardView removeFromSuperview];
+
+                                     }];
+                }else{
+                    cardView.alpha = card.matched ? 0.6 : 1.0;
+                }
             }
         }
         
     }
     
-    [self updateMinimumNumberOfCellGrid];
+    self.grid.minimumNumberOfCells = [self.cardViews count];
+    
+    NSUInteger changedViews = 0;
     for (NSUInteger viewIndex = 0; viewIndex < [self.cardViews count]; viewIndex++) {
         CGRect frame = [self.grid frameOfCellAtRow:viewIndex / self.grid.columnCount
                                           inColumn:viewIndex % self.grid.columnCount];
         frame = CGRectInset(frame, frame.size.width * CARDSPACINGINPERCENT, frame.size.height * CARDSPACINGINPERCENT);
-        ((UIView *)self.cardViews[viewIndex]).frame = frame;
+        UIView *cardView = (UIView *)self.cardViews[viewIndex];
+        if (![self frame:frame equalToFrame:cardView.frame]) {
+            [UIView animateWithDuration:0.5
+                                  delay:1.5 * changedViews++ / [self.cardViews count]
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 cardView.frame = frame;
+                             } completion:NULL];
+        }
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score :%ld", (long)self.game.score];
@@ -165,6 +183,17 @@
     NSLog(@"%@",self.cardViews);
     
     [self updateMatchedCards];
+}
+
+#define FRAMEROUNDINGERROR 0.01
+
+- (BOOL)frame:(CGRect)frame1 equalToFrame:(CGRect)frame2
+{
+    if (fabs(frame1.size.width - frame2.size.width) > FRAMEROUNDINGERROR) return NO;
+    if (fabs(frame1.size.height - frame2.size.height) > FRAMEROUNDINGERROR) return NO;
+    if (fabs(frame1.origin.x - frame2.origin.x) > FRAMEROUNDINGERROR) return NO;
+    if (fabs(frame1.origin.y - frame2.origin.y) > FRAMEROUNDINGERROR) return NO;
+    return YES;
 }
 
 -(void)updateMatchedCards
@@ -185,9 +214,20 @@
 - (void)touchCard:(UITapGestureRecognizer *)gesture
 {
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        if(![self.game cardAtIndex:gesture.view.tag].matched){
-            [self.game chooseCardAtIndex:gesture.view.tag];
-            [self updateUI];
+        Card *card = [self.game cardAtIndex:gesture.view.tag];
+        if(!card.matched){
+            
+            [UIView transitionWithView:gesture.view
+                              duration:0.5
+                               options:UIViewAnimationOptionTransitionFlipFromLeft
+                            animations:^{
+                                   card.chosen = !card.chosen;
+                                   [self updateView:gesture.view forCard:card];
+                               } completion:^(BOOL finished) {
+                                   card.chosen = !card.chosen;
+                                   [self.game chooseCardAtIndex:gesture.view.tag];
+                                   [self updateUI];
+                               }];
         }
     }
 }
@@ -225,8 +265,19 @@
 {
     self.game = nil;
     self.gameResult = nil;
+    
+    //[[self.gridView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    for(UIView *subView in self.cardViews){
+        [UIView animateWithDuration:0.2
+                         animations:^{
+                             subView.frame = CGRectMake(self.gridView.bounds.size.width, self.gridView.bounds.size.height,
+                                                         self.grid.cellSize.width, self.grid.cellSize.height);
+                         } completion:^(BOOL finished) {
+                             [subView removeFromSuperview];
+                             
+                         }];
+    }
     self.cardViews = nil;
-    [[self.gridView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.addNewCardsButton.enabled = YES;
     self.addNewCardsButton.alpha = 1.0;
     
