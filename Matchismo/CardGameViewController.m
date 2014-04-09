@@ -86,6 +86,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.lastFlippedCardsLabel.text = @"";
 }
 
@@ -103,6 +104,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    self.grid.size = self.gridView.bounds.size;
+    [self updateUI];
+}
 
 #define CARDSPACINGINPERCENT 0.08
 -(void)updateUI
