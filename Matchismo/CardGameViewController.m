@@ -88,6 +88,7 @@
     [super viewDidLoad];
 
     self.lastFlippedCardsLabel.text = @"";
+    self.lastFlippedCardsLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
 }
 
 -(void)viewWillAppear:(BOOL)animated
